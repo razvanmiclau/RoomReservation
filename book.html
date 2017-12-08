@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Room Reservation App</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <!-- JS -->
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="bower_components/moment/min/moment.min.js" charset="utf-8"></script>
+  <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="bower_components/bootstrap/js/dropdown.js" charset="utf-8"></script>
+  <script src="js/bookRoom.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Book <small id="room_for_booking"></small></h1>
+    </header>
+    <hr>
+
+    <section>
+      <!-- BOOKING FORM -->
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="username">Name</label>
+          <input name="username" type="text" class="form-control" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="date">Book from</label>
+          <div class="input-group">
+            <input name="from" id="dateFrom" type="text" class="form-control" placeholder="Select date and time for your booking">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="date">Book to</label>
+          <div class="input-group">
+            <input name="to" id="dateTo" type="text" class="form-control" placeholder="Enter duration of your booking.">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <!-- end BOOKING FORM -->
+    </section>
+
+  </div>
+  <!-- end container -->
+
+</body>
+
+</html>

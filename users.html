@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Room Reservation App</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- JS -->
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="bower_components/bootstrap/js/dropdown.js" charset="utf-8"></script>
+  <script src="bower_components/moment/min/moment.min.js" charset="utf-8"></script>
+  <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <h1>Users</h1>
+      <hr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Reservations</th>
+          </tr>
+        </thead>
+
+        <tbody id="table_rows"></tbody>
+      </table>
+    </section>
+
+  </div>
+  <!-- end container -->
+  <script src="js/fetchUsers.js"></script>
+</body>
+
+</html>
