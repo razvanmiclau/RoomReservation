@@ -3,10 +3,10 @@ const URL = 'https://api.myjson.com/bins/y3zb3';
 const displayBuildings = (data) => {
   data.buildings.map((building, idx) => {
     let item =
-      `<button onClick="fetchRoom(${idx})" class="dropdown-item">${building.name} - ${building.city}</button>`;
+      `<li><a onClick="fetchRoom(${idx})">${building.name} - ${building.city}</a></li>`;
     $('.dropdown-menu').append(item);
   })
-}
+};
 
 // Add selected room to localStorage
 const saveData = (key, name, index) => {
@@ -16,7 +16,13 @@ const saveData = (key, name, index) => {
       localStorage.setItem('room_index', index);
     }
   }
-}
+};
+
+$.get(URL, function(data) {
+  if (localStorage.getItem('API') === null) {
+      saveData('API', data);
+  }
+}).then(displayBuildings(JSON.parse(localStorage.getItem('API'))));
 
 const fillTable = (arr) => {
   arr.map((room, idx) => {
@@ -30,7 +36,7 @@ const fillTable = (arr) => {
       </tr>`;
     $('#table_rows').append(row);
   });
-}
+};
 
 const fetchRoom = (id) => {
   // clear table
@@ -44,10 +50,4 @@ const fetchRoom = (id) => {
 
   // save selected building index to localStorage.
   saveData('building_index', id);
-}
-
-$.get(URL, function(data) {
-  if (localStorage.getItem('API') === null) {
-      saveData('API', data);
-  }
-}).then(displayBuildings(JSON.parse(localStorage.getItem('API'))))
+};
